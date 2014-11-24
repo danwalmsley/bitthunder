@@ -7,7 +7,7 @@ BUILD_BASE:=$(BASE)
 MODULE_NAME:="BitThunder"
 
 ifndef PROJECT_DIR
-PROJECT_DIR:=$(shell pwd)
+PROJECT_DIR:=$(BASE)
 PROJECT_CONFIG:=n
 else
 PROJECT_CONFIG:=y

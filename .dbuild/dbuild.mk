@@ -147,7 +147,7 @@ else
 	@echo " Version ($(DBUILD_VERSION_MAJOR).$(DBUILD_VERSION_MINOR).$(DBUILD_VERSION_REVISION) - $(DBUILD_VERSION_NAME))"
 endif
 
-menuconfig: $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig
+menuconfig: $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig.exe
 	which kconfig-mconf > /dev/null || { echo "You need to compile and install kconfig-frontends: https://github.com/jameswalmsley/kconfig-frontends"; false; }
 ifneq ($(CONFIG_PATH),$(BASE))
 	touch $(CONFIG_PATH)/.config
@@ -156,7 +156,7 @@ ifneq ($(CONFIG_PATH),$(BASE))
 endif
 	cd $(BASE)/ && CONFIG_=$(CONFIG_) PROJECT_DIR=$(PROJECT_DIR) kconfig-mconf Kconfig
 	@mkdir -p $(CONFIG_HEADER_PATH)
-	$(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig $(BASE)/ > $(CONFIG_HEADER_PATH)/$(CONFIG_HEADER_NAME)
+	$(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig.exe $(BASE)/ > $(CONFIG_HEADER_PATH)/$(CONFIG_HEADER_NAME)
 ifneq ($(CONFIG_PATH),$(BASE))
 	cp $(BASE)/.config $(CONFIG_PATH)/.config
 	-cp $(CONFIG_PATH)/.config.bak $(BASE)/.config
@@ -164,7 +164,7 @@ endif
 
 .PHONY: menuconfig
 
-$(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig: $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig.c
+$(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig.exe: $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig.c
 	$(Q)gcc $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig.c $(DBUILD_ROOT).dbuild/scripts/mkconfig/cfgparser.c $(DBUILD_ROOT).dbuild/scripts/mkconfig/cfgdefine.c -o $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig
 
 

@@ -32,7 +32,7 @@ menu "Build System (dbuild)"
 
 config DBUILD_PYTHON
     string "Python path"
-	default "/usr/bin/python"
+	default "python"
 	---help---
 	DBUILD uses Python to form pretty output. Ensure it has a valid python
 	interpreter path here.

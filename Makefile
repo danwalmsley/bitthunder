@@ -7,7 +7,11 @@ BUILD_BASE:=$(BASE)
 MODULE_NAME:="BitThunder"
 
 ifndef PROJECT_DIR
+ifeq ($(OS),Windows_NT)
+PROJECT_DIR:=$(shell python $(BASE)/.dbuild/pretty/win32.py)
+else
 PROJECT_DIR:=$(shell pwd -P)
+endif
 PROJECT_CONFIG:=n
 else
 PROJECT_CONFIG:=y

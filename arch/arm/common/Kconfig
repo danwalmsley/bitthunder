@@ -1,3 +1,8 @@
 config ARCH_ARM_USE_GIC
     bool
     default n
+
+config ARCH_ARM_USE_NVIC
+    bool
+    default n
+    

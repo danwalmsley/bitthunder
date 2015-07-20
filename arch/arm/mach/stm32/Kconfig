@@ -4,10 +4,20 @@ config MACH_STM32_PLATFORM
 	bool
 	default y
     select LINKER_MACH_BSS_SECTION_IN_SRAM
+	select ARCH_ARM_CORTEX_M3
+	select ARCH_ARM_USE_NVIC
 
 config ARCH_ARM_SYSTICK_SRC0_DIV
     int
     default 8
+	
+config ARCH_ARM_NVIC_TOTAL_IRQS
+	int
+	default 255
+	
+config MACH_PRIORITY_BITS
+	int
+	default 3
 
 choice
 	prompt "systick clock source"

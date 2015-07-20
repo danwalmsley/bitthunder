@@ -171,7 +171,7 @@ $(OBJECTS): $(CONFIG_HEADER_PATH)/$(CONFIG_HEADER_NAME)
 
 MCONF:=kconfig-mconf
 ifeq ($(DBUILD_OS), WIN32)
-MCONF:=$(BASE)/scrips/kconfig-win32/kconfig-mconf.exe
+MCONF:=$(BASE)/scripts/kconfig-win32/kconfig-mconf.exe
 endif
 
 .PHONY: menuconfig
@@ -193,7 +193,9 @@ endif
 
 .PHONY: oldconfig
 oldconfig:
+ifneq ($(DBUILD_OS), WIN32)
 	@which kconfig-conf > /dev/null || { echo "You need to compile and install kconfig-frontends"; false; }
+endif
 	@cd $(BASE)/ && CONFIG_=$(CONFIG_) PROJECT_DIR=$(PROJECT_DIR) kconfig-conf --oldconfig Kconfig .config
 
 $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig$(OS_EXT): $(DBUILD_ROOT).dbuild/scripts/mkconfig/mkconfig.c

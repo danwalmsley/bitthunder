@@ -225,3 +225,5 @@ config KERNEL_CFLAGS_REMOVE
 	string
 	default "-mthumb" if ARCH_ARM_THUMB && ARCH_ARM_THUMB_INTERWORK
 	default "" if !ARCH_ARM_THUMB
+
+source arch/arm/common/Kconfig

@@ -2,6 +2,7 @@
 info.config:
 	@echo "CONFIG_    :       " $(CONFIG_)
 	@echo "TOOLCHAIN  :       " $($(CONFIG_)TOOLCHAIN)
+	@echo "BASE       :       " $(BASE)
 	@echo "CONFIG_PATH:       " $(CONFIG_PATH)
 	@echo "CONFIG_HEADER_PATH:" $(CONFIG_HEADER_PATH)
 	@echo "CONFIG_HEADER_NAME:" $(CONFIG_HEADER_NAME)

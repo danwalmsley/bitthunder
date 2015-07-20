@@ -26,7 +26,7 @@ for line in sys.stdin:
     line = line.strip()
     line = line.rstrip()
     line = line.lstrip()
-    line = line.decode('utf8')
+    #line = line.decode('utf8')
     
     if("removed" in line):
         description = line.split(" ")[-1][1:][:-1]

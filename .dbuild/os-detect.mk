@@ -20,3 +20,10 @@ endif
 ifeq ($(DBUILD_OS), OSX)
 OS_EXT:=.osx
 endif
+
+
+ifeq ($(OS),Windows_NT)
+PWD=$(shell python $(BASE)/.dbuild/pretty/win32.py)
+else
+PWD=$(shell pwd -P)
+endif

@@ -6,12 +6,10 @@ BASE:=$(patsubst %/,%,$(BASE_PATH))
 BUILD_BASE:=$(BASE)
 MODULE_NAME:="BitThunder"
 
+include $(BASE)/.dbuild/os-detect.mk
+
 ifndef PROJECT_DIR
-ifeq ($(OS),Windows_NT)
-PROJECT_DIR:=$(shell python $(BASE)/.dbuild/pretty/win32.py)
-else
-PROJECT_DIR:=$(shell pwd -P)
-endif
+PROJECT_DIR:=$(PWD)
 PROJECT_CONFIG:=n
 else
 PROJECT_CONFIG:=y
@@ -79,7 +77,8 @@ project.init:
 	$(Q)touch $(PROJECT_DIR)/README.md
 	$(Q)touch $(PROJECT_DIR)/main.c
 	-$(Q)mkdir $(PROJECT_DIR)/include
-	$(Q)echo "export PROJECT_DIR=\$$(shell pwd -P)" >> $(PROJECT_DIR)/Makefile
+	$(Q)echo "include $(shell $(RELPATH) $(BASE) $(PROJECT_DIR))/.dbuild/os-detect.mk" >> $(PROJECT_DIR)/Makefile
+	$(Q)echo "export PROJECT_DIR=\$$(PWD)" >> $(PROJECT_DIR)/Makefile
 	$(Q)echo "export PROJECT_CONFIG=y" >> $(PROJECT_DIR)/Makefile
 	$(Q)echo "include $(shell $(RELPATH) $(BASE) $(PROJECT_DIR))/Makefile" >> $(PROJECT_DIR)/Makefile
 	$(Q)echo "objs += \$$(APP)/main.o" >> $(PROJECT_DIR)/objects.mk

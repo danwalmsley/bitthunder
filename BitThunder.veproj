@@ -9215,11 +9215,10 @@
       <Rtti>false</Rtti>
       <Exceptions>false</Exceptions>
       <IncludePaths>
-        <string>BitThunder\include</string>
-        <string>BitThunder\lib\include</string>
-        <string>BitThunder\arch\arm\include</string>
-        <string>BitThunder</string>
-        <string>BitThunder\os\include</string>
+        <string>..\BitThunder</string>
+        <string>lib\include</string>
+        <string>arch\arm\include</string>
+        <string>os\include</string>
       </IncludePaths>
       <Defines>
         <string>__FPU_USED</string>

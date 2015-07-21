@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="BitThunderApplicationProject">
   <Id>211cdc23-cd81-471d-84d6-856820767e00</Id>
   <ParentId>7c28c612-a2d9-4730-9174-0850c8c794ea</ParentId>
   <LocationRelativeToParent>BitThunder\BitThunder.veproj</LocationRelativeToParent>

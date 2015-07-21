@@ -4267,14 +4267,14 @@
                       <LocationRelativeToParent>jimregexp.c</LocationRelativeToParent>
                     </ProjectItem>
                     <ProjectItem xsi:type="ProjectFile">
-                      <Id>3879f81e-830a-466c-b459-42b6614cef15</Id>
-                      <ParentId>f1797cf2-b2fb-4656-b0ec-a25d5e4da9ac</ParentId>
-                      <LocationRelativeToParent>jim-regexp.c</LocationRelativeToParent>
-                    </ProjectItem>
-                    <ProjectItem xsi:type="ProjectFile">
                       <Id>f2bfb0b9-0b1c-4538-ad8a-706b7ff47d06</Id>
                       <ParentId>f1797cf2-b2fb-4656-b0ec-a25d5e4da9ac</ParentId>
                       <LocationRelativeToParent>jimregexp.h</LocationRelativeToParent>
+                    </ProjectItem>
+                    <ProjectItem xsi:type="ProjectFile">
+                      <Id>3879f81e-830a-466c-b459-42b6614cef15</Id>
+                      <ParentId>f1797cf2-b2fb-4656-b0ec-a25d5e4da9ac</ParentId>
+                      <LocationRelativeToParent>jim-regexp.c</LocationRelativeToParent>
                     </ProjectItem>
                     <ProjectItem xsi:type="ProjectFile">
                       <Id>73986b2b-b376-45e5-b246-e901a35a314b</Id>
